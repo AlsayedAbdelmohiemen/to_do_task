@@ -20,5 +20,5 @@ class Task {
     required this.title,
     required this.description,
     this.isCompleted = false,
-  }) : id = id ??  Uuid().v4();
+  }) : id = id ??  const Uuid().v4();
 }
