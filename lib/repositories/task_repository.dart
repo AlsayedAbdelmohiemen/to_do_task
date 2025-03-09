@@ -6,11 +6,19 @@ class TaskRepository {
 
   TaskRepository({required this.taskBox});
 
-  List<Task> getAllTasks() => taskBox.values.toList();
+  List<Task> getAllTasks() {
+    return List<Task>.from(taskBox.values);
+  }
 
-  void addTask(Task task) => taskBox.put(task.id, task);
+  Future<void> addTask(Task task) async {
+    await taskBox.put(task.id, task);
+  }
 
-  void updateTask(Task task) => taskBox.put(task.id, task);
+  Future<void> updateTask(Task task) async {
+    await taskBox.put(task.id, task);
+  }
 
-  void deleteTask(String taskId) => taskBox.delete(taskId);
+  Future<void> deleteTask(String taskId) async {
+    await taskBox.delete(taskId);
+  }
 }
